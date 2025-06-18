@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOEIC LAB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <!-- 外層容器：頁面背景＋中央卡片 -->
+  <div class="bg-gray-100 min-h-screen py-6">
+  <div class="max-w-screen-lg mx-auto bg-white rounded-xl shadow px-6 pb-10">
+  <!-- 頁首 -->
+  <div class="bg-[#212121] text-white text-center py-6 rounded-t-xl">
+    <h1 class="text-3xl font-bold  font-extrabold tracking-wide">TOEIC LAB</h1>
+    <p class="text-sm opacity-90 mt-1">VAC</p>
+  </div>
+
+  <!-- 完整橫向排列的一行篩選欄區塊 -->
+  <div class="w-full flex justify-center mt-6">
+    <div class="flex flex-wrap gap-4 items-end bg-[#E8EAF6] border rounded px-6 py-4">
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1">篩選主題：</label>
+          <select id="categoryFilter" class="w-[200px] border p-2 rounded">
+            <option value="">全部主題</option>
+            <option value="金融">金融</option>
+            <option value="保健">保健</option>
+            <option value="外食">外食</option>
+            <option value="採購">採購</option>
+            <option value="旅遊">旅遊</option>
+            <option value="娛樂">娛樂</option>
+            <option value="人事">人事</option>
+            <option value="製造業">製造業</option>
+            <option value="辦公室">辦公室</option>
+            <option value="技術層面">技術層面</option>
+            <option value="房屋地產">房屋地產</option>
+            <option value="商務溝通">商務溝通</option>
+            <option value="企業發展">企業發展</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1">重要性：</label>
+        <select id="importanceFilter" class="w-[200px] border p-2 rounded">
+          <option value="">全部重要性</option>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★</option>
+          <option value="3">★★★</option>
+          <option value="2">★★</option>
+          <option value="1">★</option>
+        </select>
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1">搜尋：</label>
+        <div class="flex">
+          <input id="keywordInput" type="text" placeholder="輸入關鍵字..." class="border p-2 rounded-l w-[250px]">
+          <button onclick="filterVocab()" class="bg-[#59417a] text-white px-4 rounded-r">搜尋</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- 單字卡片呈現區 -->
+    <div id="vocabContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+      <!-- JS 將自動插入單字卡片 -->
+    </div>
+    
+<script src="./JS/data-vocab.js"></script>
+<script src="./JS/main.js"></script>
+</body>
+</html>
